@@ -8,7 +8,7 @@ CloudWatch Logsのロググループを作成するモジュールです。
 |変数名|型|説明|
 |---|---|---|
 |app_name|string|プロジェクト名|
-|env|string|環境(loc, dev, stg, prod)|
+|env|string|環境(dev, stg, prod)|
 |log_group_name|string|ロググループ名。実際には `<プロジェクト名>-<環境>-<ロググループ名>` という名前になる。|
 
 ### オプション変数

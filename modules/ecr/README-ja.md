@@ -8,7 +8,7 @@ ECRのプライベートリポジトリを作成するモジュールです。
 |変数名|型|説明|
 |---|---|---|
 |app_name|string|プロジェクト名|
-|env|string|環境(loc, dev, stg, prod)|
+|env|string|環境(dev, stg, prod)|
 |image_name|string|リポジトリで管理するDockerイメージ名|
 
 ### オプション変数

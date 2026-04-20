@@ -8,7 +8,7 @@
 |変数名|型|説明|
 |---|---|---|
 |app_name|string|プロジェクト名|
-|env|string|環境(loc, dev, stg, prod)|
+|env|string|環境(dev, stg, prod)|
 |vpc_id|string|VPCのID|
 |private_subnet_ids|list(string)|プライベートサブネットのIDのリスト|
 |app_sg_id|string|アプリケーション(ECS Fargate)に設定したセキュリティグループのID。アプリケーションからRDSインスタンスへの通信を許可するために使用する。|

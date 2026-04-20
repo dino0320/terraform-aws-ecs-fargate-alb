@@ -8,7 +8,7 @@ Secrets Managerのシークレットを作成するモジュールです。
 |変数名|型|説明|
 |---|---|---|
 |app_name|string|プロジェクト名|
-|env|string|環境(loc, dev, stg, prod)|
+|env|string|環境(dev, stg, prod)|
 |secrets_name|string|シークレット名。実際には `<プロジェクト名>-<環境>-<シークレット名>` という名前になる。|
 |secret_values|string|JSONエンコードされたシークレットのキーと値のペア|
 

@@ -9,7 +9,7 @@ VPCやサブネット、VPCエンドポイント、NAT Gatewayなどを作成す
 |---|---|---|
 |region|string|AWSのリージョン(例: ap-northeast-1)|
 |app_name|string|プロジェクト名|
-|env|string|環境(loc, dev, stg, prod)|
+|env|string|環境(dev, stg, prod)|
 |availability_zones|list(string)|アベイラビリティゾーンのリスト(例: ["ap-northeast-1a", "ap-northeast-1c", "ap-northeast-1d"])|
 |vpc_cidr|string|VPCのCIDR(例: 172.32.0.0/16)|
 |public_subnet_cidrs|list(string)|パブリックサブネットのCIDRのリスト(例: ["172.32.0.0/20",  "172.32.16.0/20", "172.32.32.0/20"])|

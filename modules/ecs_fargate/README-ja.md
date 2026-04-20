@@ -10,7 +10,7 @@
 |account_id|string|AWSアカウントのID|
 |region|string|AWSのリージョン(例: ap-northeast-1)|
 |app_name|string|プロジェクト名|
-|env|string|環境(loc, dev, stg, prod)|
+|env|string|環境(dev, stg, prod)|
 |vpc_id|string|VPCのID|
 |private_subnet_ids|list(string)|プライベートサブネットのIDのリスト|
 |alb_sg_id|string|ALBに設定したセキュリティグループのID。ALBからECSへの通信を許可するために使用する。|

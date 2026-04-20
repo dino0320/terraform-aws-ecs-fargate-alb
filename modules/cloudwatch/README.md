@@ -8,7 +8,7 @@ This module creates a CloudWatch Logs log group.
 | Name | Type | Description |
 |---|---|---|
 | app_name | string | Project name |
-| env | string | Environment (loc, dev, stg, prod) |
+| env | string | Environment (dev, stg, prod) |
 | log_group_name | string | Name of the log group. The final name will be formatted as `<app_name>-<env>-<log_group_name>`. |
 
 ### Optional Variables

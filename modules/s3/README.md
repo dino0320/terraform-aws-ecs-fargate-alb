@@ -9,7 +9,7 @@ This module creates an S3 bucket.
 |---|---|---|
 | account_id | string | AWS Account ID |
 | app_name | string | Project name |
-| env | string | Environment (loc, dev, stg, prod) |
+| env | string | Environment (dev, stg, prod) |
 | storage_name | string | Storage name. The bucket name will be formatted as `<account_id>-<app_name>-<env>-<storage_name>`. |
 
 ### Optional Variables

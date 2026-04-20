@@ -9,7 +9,7 @@ S3のバケットを作成するモジュールです。
 |---|---|---|
 |account_id|string|AWSアカウントのID|
 |app_name|string|プロジェクト名|
-|env|string|環境(loc, dev, stg, prod)|
+|env|string|環境(dev, stg, prod)|
 |storage_name|string|ストレージ名。バケット名は `<AWSのアカウントのID>-<プロジェクト名>-<環境>-<ストレージ名>` になる。|
 
 ### オプション変数

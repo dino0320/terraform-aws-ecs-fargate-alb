@@ -8,7 +8,7 @@ This module creates an RDS instance within private subnets.
 | Name | Type | Description |
 |---|---|---|
 | app_name | string | Project name |
-| env | string | Environment (loc, dev, stg, prod) |
+| env | string | Environment (dev, stg, prod) |
 | vpc_id | string | ID of the VPC |
 | private_subnet_ids | list(string) | List of private subnet IDs |
 | app_sg_id | string | Security group ID of the application (ECS Fargate service). Used to allow communication from the application to the RDS instance. |

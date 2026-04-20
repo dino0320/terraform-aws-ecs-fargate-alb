@@ -8,7 +8,7 @@ This module creates an ECR (Elastic Container Registry) private repository.
 | Variable Name | Type | Description |
 |---|---|---|
 | app_name | string | Project name |
-| env | string | Environment (loc, dev, stg, prod) |
+| env | string | Environment (dev, stg, prod) |
 | image_name | string | Name of the Docker image to be managed in the repository |
 
 ### Optional Variables

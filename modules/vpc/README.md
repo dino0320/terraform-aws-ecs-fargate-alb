@@ -9,7 +9,7 @@ This module creates networking resources including VPC, subnets, VPC endpoints, 
 |---|---|---|
 | region | string | AWS Region (e.g., ap-northeast-1) |
 | app_name | string | Project name |
-| env | string | Environment (loc, dev, stg, prod) |
+| env | string | Environment (dev, stg, prod) |
 | availability_zones | list(string) | List of Availability Zones (e.g., ["ap-northeast-1a", "ap-northeast-1c", "ap-northeast-1d"]) |
 | vpc_cidr | string | CIDR block for the VPC (e.g., 172.32.0.0/16) |
 | public_subnet_cidrs | list(string) | List of CIDR blocks for public subnets (e.g., ["172.32.0.0/20", "172.32.16.0/20", "172.32.32.0/20"]) |

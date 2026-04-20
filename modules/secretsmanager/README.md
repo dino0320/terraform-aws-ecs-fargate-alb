@@ -8,7 +8,7 @@ This module creates a secret in AWS Secrets Manager.
 | Name | Type | Description |
 |---|---|---|
 | app_name | string | Project name |
-| env | string | Environment (loc, dev, stg, prod) |
+| env | string | Environment (dev, stg, prod) |
 | secrets_name | string | Name of the secret. The final name will be formatted as `<app_name>-<env>-<secrets_name>`. |
 | secret_values | string | JSON-encoded key-value pairs for the secret |
 

@@ -8,7 +8,7 @@ This module creates an Application Load Balancer (ALB) in public subnets to enab
 | Name | Type | Description |
 |---|---|---|
 | app_name | string | Project name |
-| env | string | Environment (loc, dev, stg, prod) |
+| env | string | Environment (dev, stg, prod) |
 | vpc_id | string | ID of the VPC |
 | public_subnet_ids | list(string) | List of public subnet IDs |
 | app_sg_id | string | Security group ID of the application (ECS Fargate service). Used to allow traffic from the ALB to the application. |
