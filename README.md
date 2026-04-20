@@ -1,0 +1,79 @@
+| [日本語](/README-ja.md) | **English** |
+| --- | --- |
+
+## Overview
+These are Terraform modules for an architecture using AWS ECS Fargate + ALB.
+
+## Sample Architecture Diagram
+![Sample architecture diagram](/images/architecture_diagram_sample.png "Sample architecture diagram")
+
+## Environment
+- Terraform 1.14+
+- hashicorp/aws 6.40.0 (AWS provider)
+
+## Examples
+- [Basic NGINX App](/examples/basic/README.md): A basic example.
+
+## Useage
+```tf
+# Common tags
+locals {
+  common_tags = {
+    Environment = var.env
+    Project     = var.app_name
+  }
+}
+
+# Network
+module "vpc" {
+  source = "github.com/dino0320/terraform-aws-ecs-fargate-alb//modules/vpc?ref=v1.0.0"
+
+  region               = var.region
+  app_name             = var.app_name
+  env                  = var.env
+  common_tags          = local.common_tags
+  ...
+}
+
+# Application Load Balancer (ALB)
+module "alb" {
+  source = "github.com/dino0320/terraform-aws-ecs-fargate-alb//modules/alb?ref=v1.0.0"
+
+  app_name          = var.app_name
+  env               = var.env
+  vpc_id            = module.vpc.vpc_id
+  common_tags       = local.common_tags
+  public_subnet_ids = module.vpc.public_subnet_ids
+  app_sg_id         = module.ecs_app.ecs_sg_id
+  target_port       = var.frontend_port
+}
+
+# ECS Fargate
+module "ecs_app" {
+  source = "github.com/dino0320/terraform-aws-ecs-fargate-alb//modules/ecs_fargate?ref=v1.0.0"
+
+  account_id         = var.account_id
+  region             = var.region
+  app_name           = var.app_name
+  env                = var.env
+  vpc_id             = module.vpc.vpc_id
+  common_tags        = local.common_tags
+  private_subnet_ids = module.vpc.private_subnet_ids
+  alb_sg_id          = module.alb.alb_sg_id
+  endpoint_sg_id     = module.vpc.endpoint_sg_id
+  ...
+}
+
+# Database, CloudWatch Logs, SecretsManager, and etc.
+...
+```
+
+## Documents of Components
+- [alb](/modules/alb/README.md)
+- [cloudwatch](/modules/cloudwatch/README.md)
+- [ecr](/modules/ecr/README.md)
+- [ecs_fargate](/modules/ecs_fargate/README.md)
+- [rds](/modules/rds/README.md)
+- [s3](/modules/s3/README.md)
+- [secretsmanager](/modules/secretsmanager/README.md)
+- [vpc](/modules/vpc/README.md)
