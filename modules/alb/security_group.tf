@@ -26,7 +26,7 @@ resource "aws_security_group_rule" "egress_target" {
 }
 
 resource "aws_security_group_rule" "ingress_http" {
-  count = var.env == "dev" ? 1 : 0
+  count = var.is_http ? 1 : 0
 
   type              = "ingress"
   from_port         = 80

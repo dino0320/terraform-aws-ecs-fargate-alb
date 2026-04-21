@@ -55,7 +55,7 @@ resource "aws_lb_listener" "https" {
 */
 
 resource "aws_lb_listener" "http" {
-  count = var.env == "dev" ? 1 : 0
+  count = var.is_http ? 1 : 0
 
   load_balancer_arn = aws_lb.this.arn
   port              = "80"

@@ -20,6 +20,7 @@
 |common_tags|map(string)|{}|共通タグのマップ|
 |sg_target_protocol|string|tcp|セキュリティグループの、アプリケーションとの通信プロトコル|
 |target_protocol|string|HTTP|アプリケーションとの通信プロトコル|
+|is_http|bool|false|HTTP通信を有効にするかどうか|
 |health_check_path|string|/|アプリケーションのヘルスチェック用のパス|
 |healthy_threshold|number|5|ヘルスチェックが成功とみなされる連続成功回数|
 |unhealthy_threshold|number|5|ヘルスチェックが失敗とみなされる連続失敗回数|

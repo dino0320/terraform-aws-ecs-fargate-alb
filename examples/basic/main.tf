@@ -33,6 +33,7 @@ module "alb" {
   public_subnet_ids = module.vpc.public_subnet_ids
   app_sg_id         = module.ecs_app.ecs_sg_id
   target_port       = var.web_port
+  is_http           = true
 }
 
 module "log_group" {

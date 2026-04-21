@@ -20,6 +20,7 @@ This module creates an Application Load Balancer (ALB) in public subnets to enab
 | common_tags | map(string) | {} | Map of common tags |
 | sg_target_protocol | string | tcp | Communication protocol with the application for the security group |
 | target_protocol | string | HTTP | Communication protocol with the application |
+| is_http | bool | false | Whether to enable HTTP |
 | health_check_path | string | / | Destination path for health checks |
 | healthy_threshold | number | 5 | Number of consecutive successful health checks required before considering an unhealthy target healthy |
 | unhealthy_threshold | number | 5 | Number of consecutive failed health checks required before considering a target unhealthy |

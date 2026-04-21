@@ -24,6 +24,11 @@ variable "target_protocol" {
   default = "HTTP"
 }
 
+variable "is_http" {
+  type    = bool
+  default = false
+}
+
 variable "health_check_path" {
   type    = string
   default = "/"
