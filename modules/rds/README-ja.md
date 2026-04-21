@@ -28,6 +28,8 @@
 |allocated_storage|number|20|最初に確保するディスク容量(GB)|
 |max_allocated_storage|number|100|ディスク容量の自動拡張の上限値(GB)|
 |storage_type|string|gp3|ディスクの種類|
+|is_skip_final_snapshot|bool|false|DBインスタンス削除前の最終スナップショット作成をスキップするかどうか|
+|is_deletion_protection|bool|true|DBインスタンスの削除保護を有効にするかどうか(誤削除防止)|
 |db_username|string|dbadmin|初期ユーザー名|
 
 ### アウトプット

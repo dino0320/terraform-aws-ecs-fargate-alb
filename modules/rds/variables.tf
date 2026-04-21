@@ -43,6 +43,14 @@ variable "storage_type" {
   type    = string
   default = "gp3"
 }
+variable "is_skip_final_snapshot" {
+  type    = bool
+  default = false
+}
+variable "is_deletion_protection" {
+  type    = bool
+  default = true
+}
 
 variable "db_name" { type = string }
 variable "db_username" {

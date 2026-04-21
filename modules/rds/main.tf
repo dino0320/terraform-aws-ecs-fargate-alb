@@ -40,8 +40,8 @@ resource "aws_db_instance" "this" {
   vpc_security_group_ids = [aws_security_group.db.id]
 
   publicly_accessible = false
-  skip_final_snapshot = var.env == "dev" ? true : false
-  deletion_protection = var.env == "prod" ? true : false
+  skip_final_snapshot = var.is_skip_final_snapshot
+  deletion_protection = var.is_deletion_protection
 
   lifecycle {
     ignore_changes = [password] # Avoid instance replacement on password updates

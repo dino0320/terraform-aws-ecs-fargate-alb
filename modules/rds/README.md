@@ -28,6 +28,8 @@ This module creates an RDS instance within private subnets.
 | allocated_storage | number | 20 | Initial storage capacity (GB) |
 | max_allocated_storage | number | 100 | Maximum limit for storage auto-scaling (GB) |
 | storage_type | string | gp3 | Storage type |
+| is_skip_final_snapshot | bool | false | Whether to skip creating a final DB snapshot before the DB instance is deleted |
+| is_deletion_protection | bool | true | Whether to enable deletion protection for the DB instance |
 | db_username | string | dbadmin | Initial username |
 
 ### Outputs
