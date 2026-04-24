@@ -77,3 +77,36 @@ module "ecs_app" {
 - [s3](/modules/s3/README-ja.md)
 - [secretsmanager](/modules/secretsmanager/README-ja.md)
 - [vpc](/modules/vpc/README-ja.md)
+
+## 自前のDockerイメージを使用する場合のインフラ構築手順
+自前のDockerイメージを使う場合、`ECR作成 -> DockerイメージのECRリポジトリへのpush -> その他リソースの構築` の順で実行しなければなりません。  
+実行手順の例をまとめました。
+
+### 1. AWS SSOログインする
+以下のコマンドを実行してAWS SSOログインします。
+
+```bash
+$ aws sso login --profile my-profile
+```
+
+### 2. ECRのみ構築する
+以下のように `target` を設定し、ECRリポジトリのみ構築します。
+
+```bash
+$ terraform apply -target=module.ecr_web -var-file="dev.tfvars"
+```
+
+### 3. Dockerイメージをpushする
+以下のように作成したECRリポジトリに自前のDockerイメージをpushします。
+
+```bash
+$ aws ecr get-login-password --region ap-northeast-1 --profile my-profile | docker login --username AWS --password-stdin 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com
+$ docker push 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/my-app-dev-web-repository:latest
+```
+
+### 4. その他のリソースを構築する
+以下を実行して、その他のリソースを構築します。
+
+```bash
+$ terraform apply -var-file="dev.tfvars"
+```
