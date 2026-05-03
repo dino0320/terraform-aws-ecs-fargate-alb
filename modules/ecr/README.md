@@ -40,5 +40,5 @@ No modules.
 
 | Name | Description |
 | ---- | ----------- |
-| <a name="output_repository_url"></a> [repository\_url](#output\_repository\_url) | n/a |
+| <a name="output_repository_url"></a> [repository\_url](#output\_repository\_url) | The URL of the repository |
 <!-- END_TF_DOCS -->
